@@ -53,7 +53,7 @@
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">/v3/clean/</stringProp>
+            <stringProp name="HTTPSampler.path">/v4/clean/</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -306,10 +306,10 @@ var title = vars.get(&quot;title_&quot;+k);
 log.info(&quot;title&quot;);
 var link  = &quot;https://www.reginamaria.ro/cariere/pozitii-disponibile/&quot;+ vars.get(&quot;link_&quot;+k);
 log.info(&quot;link&quot;);
-var city =  vars.get(&quot;city_&quot;+k);
+var city =  vars.get(&quot;city_&quot;+k).replace(&quot;Bucuresti&quot;,&quot;București&quot;).replace(&quot;Ploiesti&quot;,&quot;Ploiești&quot;).replace(&quot;Timisoara&quot;,&quot;Timișoara&quot;).replace(&quot;Brasov&quot;,&quot;Brașov&quot;);
 log.info(&quot;city&quot;);
 var country = vars.get(&quot;country&quot;)
-String this_job = &apos;{&quot;id&quot;:&quot;&apos;+id+&apos;&quot;,&quot;job_title&quot;:&quot;&apos;+title+&apos;&quot;, &quot;job_link&quot;:&quot;&apos;+link+&apos;&quot;,&quot;company&quot;:&quot;regina_maria&quot;,&quot;country&quot;:&quot;Romania&quot;,&quot;city&quot;:&quot;&apos;+city+&apos;&quot;}&apos;;
+String this_job = &apos;{&quot;id&quot;:&quot;&apos;+id+&apos;&quot;,&quot;job_title&quot;:&quot;&apos;+title+&apos;&quot;, &quot;job_link&quot;:&quot;&apos;+link+&apos;&quot;,&quot;company&quot;:&quot;regina_maria&quot;,&quot;country&quot;:&quot;România&quot;,&quot;city&quot;:&quot;&apos;+city+&apos;&quot;}&apos;;
 var jobList = vars.getObject(&quot;jobList&quot;);
 jobList = jobList + this_job;
 vars.putObject(&quot;jobList&quot;,jobList);</stringProp>
@@ -372,7 +372,7 @@ vars.putObject(&quot;jobList&quot;,jobList);</stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-            <stringProp name="HTTPSampler.path">/v3/update/</stringProp>
+            <stringProp name="HTTPSampler.path">/v4/update/</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
