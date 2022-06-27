@@ -10,7 +10,7 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="company" elementType="Argument">
             <stringProp name="Argument.name">company</stringProp>
-            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.value">REGINAMARIA</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -42,7 +42,7 @@
               <collectionProp name="Arguments.arguments">
                 <elementProp name="company" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                  <stringProp name="Argument.value">regina_maria</stringProp>
+                  <stringProp name="Argument.value">${company}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   <stringProp name="Argument.name">company</stringProp>
@@ -308,8 +308,9 @@ var link  = &quot;https://www.reginamaria.ro/cariere/pozitii-disponibile/&quot;+
 log.info(&quot;link&quot;);
 var city =  vars.get(&quot;city_&quot;+k).replace(&quot;Bucuresti&quot;,&quot;București&quot;).replace(&quot;Ploiesti&quot;,&quot;Ploiești&quot;).replace(&quot;Timisoara&quot;,&quot;Timișoara&quot;).replace(&quot;Brasov&quot;,&quot;Brașov&quot;);
 log.info(&quot;city&quot;);
-var country = vars.get(&quot;country&quot;)
-String this_job = &apos;{&quot;id&quot;:&quot;&apos;+id+&apos;&quot;,&quot;job_title&quot;:&quot;&apos;+title+&apos;&quot;, &quot;job_link&quot;:&quot;&apos;+link+&apos;&quot;,&quot;company&quot;:&quot;regina_maria&quot;,&quot;country&quot;:&quot;România&quot;,&quot;city&quot;:&quot;&apos;+city+&apos;&quot;}&apos;;
+var country = vars.get(&quot;country&quot;);
+var company = vars.get(&quot;company&quot;);
+String this_job = &apos;{&quot;id&quot;:&quot;&apos;+id+&apos;&quot;,&quot;job_title&quot;:&quot;&apos;+title+&apos;&quot;, &quot;job_link&quot;:&quot;&apos;+link+&apos;&quot;,&quot;company&quot;:&quot;&apos;+company+&apos;&quot;,&quot;country&quot;:&quot;România&quot;,&quot;city&quot;:&quot;&apos;+city+&apos;&quot;}&apos;;
 var jobList = vars.getObject(&quot;jobList&quot;);
 jobList = jobList + this_job;
 vars.putObject(&quot;jobList&quot;,jobList);</stringProp>
